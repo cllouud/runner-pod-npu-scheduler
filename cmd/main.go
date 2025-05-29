@@ -1,7 +1,6 @@
 package main
 
 import (
-	"flag"
 	"os"
 
 	"k8s.io/klog/v2"
@@ -13,7 +12,7 @@ import (
 
 func main() {
 	klog.InitFlags(nil)
-	flag.Parse()
+
 	defer klog.Flush()
 
 	command := app.NewSchedulerCommand(
