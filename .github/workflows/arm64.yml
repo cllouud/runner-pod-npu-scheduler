@@ -1,0 +1,18 @@
+name: arm64
+on:
+  workflow_dispatch:
+
+jobs:
+  Run-npm-on-Ubuntu:
+    name: Run npm on Ubuntu
+    runs-on: ubuntu-22.04-arm
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/login-action
+        with:
+          username: ${{  secrets.DOCKERHUB_USERNAME }}
+          password: ${{  secrets.DOCKERHUB_SECRET }}
+
+      - run: |
+        docker buildx build --platform=linux/arm64 -t dodok0a/runner-pod-npu-scheduler:v100 .  --push
