@@ -14,6 +14,6 @@ data:
         profiles:
           - schedulerName: runner-pod-npu-scheduler
             plugins:
-              score:
+              filter:
                 enabled:
                   - name: runner-pod-npu-scheduler
