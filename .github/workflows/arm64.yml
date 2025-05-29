@@ -15,4 +15,4 @@ jobs:
           password: ${{  secrets.DOCKERHUB_SECRET }}
 
       - run: |
-          docker buildx build --platform=linux/arm64 -t dodok0a/runner-pod-npu-scheduler:v101 .  --push
+          docker buildx build --platform=linux/arm64 -t dodok0a/runner-pod-npu-scheduler:v102 .  --push
